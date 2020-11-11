@@ -1,0 +1,280 @@
+:root {
+  font-size: 62.5%; /* 10px */
+
+  --color-white: #f7f7f7;
+  --color-gray: #efefef;
+  --color-dark-grey: #666666;
+  --color-black: #1d1d1d;
+  --color-blue: #2f2eae;
+}
+
+body {
+  max-width: 100%;
+  text-align: center;
+  font-family: montserrat, sans-serif;
+  background-color: var(--color-gray);
+}
+
+h2 {
+  font-size: 24px;
+}
+
+/*-- navbar --*/
+#navbar {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: var(--color-white);
+}
+
+#navbar a {
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+#navbar a:hover {
+  color: var(--color-blue);
+}
+
+#navbar ul {
+  max-width: 300px;
+  margin: 15px 40px 15px auto;
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  order: 3;
+}
+
+/*--- welcome ---*/
+#welcome-section {
+  height: 60vh;
+  padding-top: 40vh;
+  color: var(--color-white);
+  background-color: var(--color-blue);
+}
+
+#welcome-section p {
+  padding-bottom: 100px;
+  font-style: italic;
+  font-size: 2rem;
+  opacity: (60%);
+}
+
+h1 {
+  font-size: 4rem;
+  font-family: source code pro, sans-serif;
+}
+
+/*--- projects ---*/
+#projects-section,
+#profile-section {
+  padding-top: 50px;
+}
+
+#project-itens img {
+  max-width: 350px;
+  border-radius: 5px;
+}
+
+#project-itens {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#project-itens a {
+  color: var(--color-grey);
+  text-decoration: none;
+}
+
+.project-tile {
+  padding-bottom: 20px;
+  background-color: var(--color-white);
+  box-shadow: 0 0 15px -5px var(--color-dark-grey);
+  border-radius: 5px;
+  transition-duration: 0.5s;
+}
+
+.img-caption {
+  font-size: 1.8rem;
+  padding-top: 15px;
+}
+
+.code {
+  opacity: 0%;
+  font-weight: bold;
+}
+.project-tile:hover .code {
+  animation-name: fading;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+/*--- profile ---*/
+#profile-link img {
+  max-height: 30px;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+#profile {
+  display: flex;
+  flex-direction: column;
+}
+
+#profile-link {
+  max-width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#profile-img {
+  position: absolute;
+  width: 200px;
+  left: 50%;
+  margin-left: -100px;
+
+  box-shadow: 0 0 15px -5px var(--color-dark-grey);
+  order: -1;
+}
+
+#profile-img img {
+  border: 5px solid var(--color-gray);
+  border-radius: 50%;
+}
+
+#contact-info p {
+  font-size: 1.8rem;
+  margin-top: -10px;
+}
+
+#contact-info h3 {
+  font-size: 2.2rem;
+}
+
+#contact-info {
+  width: 75%;
+  margin: 100px auto 20px auto;
+  padding: 105px 10px 50px 10px;
+
+  color: var(--color-white);
+
+  background-color: var(--color-blue);
+  border-radius: 20px;
+  box-shadow: 0 0 10px var(--color-dark-grey);
+  order: -2;
+}
+
+.my-profile {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--color-black);
+
+  padding: 0 10px;
+  margin: 30px 10px;
+  min-width: 16rem;
+
+  background-color: var(--color-white);
+
+  border-radius: 30px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.my-profile:hover {
+  color: var(--color-blue);
+}
+
+/*--- buttons ---*/
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 10px;
+  width: 200px;
+  margin-top: 30px;
+  font-size: 18px;
+  font-family: montserrat, sans-serif;
+  font-weight: bold;
+  color: var(--color-white);
+  background-color: var(--color-blue);
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+.button span {
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.button:hover span {
+  padding-right: 25px;
+}
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/*--- animation ---*/
+@keyframes fading {
+  to {
+    opacity: 1;
+    color: var(--color-blue);
+  }
+}
+
+/*--- mobile version ---*/
+/*---- navbar ----*/
+@media (max-width: 768px) {
+  #navbar ul {
+    margin: 15px auto;
+  }
+}
+
+/*---- welcome ----*/
+@media (max-height: 500px) {
+  #welcome-section {
+    padding-bottom: 50px;
+  }
+}
+
+/*---- projects ----*/
+@media (max-width: 768px) {
+  #project-itens {
+    flex-direction: column;
+  }
+  .project-tile {
+    margin: 0 auto 20px;
+  }
+  #project-itens img {
+    max-width: 300px;
+  }
+}
+
+/*---- profile ----*/
+@media (max-width: 768px) {
+  #profile-link {
+    max-width: 80%;
+    flex-direction: column;
+  }
+  #contact-info {
+    padding: 65px 10px 30px 10px;
+  }
+  #profile-img {
+    width: 150px;
+    margin-left: -75px;
+  }
+  .my-profile {
+    margin: 10px;
+  }
+}
